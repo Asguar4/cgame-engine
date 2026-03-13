@@ -9,7 +9,7 @@
 // 22 MiB, can probably change to a higher value without issue.
 // Check your target platform.
 #define IO_READ_CHUNK_SIZE 2097152
-#define IO_READ_ERROR_GENERAL "Error reading file: %s. errno: %d\n"
+#define IO_READ_ERROR_GENERAL "Error reading file: %s\n"
 #define IO_READ_ERROR_MEMORY "Not enough free memory to read file: %s\n"
 
 File io_file_read(const char * path) {
