@@ -4,7 +4,7 @@
 #include <SDL2/SDL.h>
 #include <linmath.h>
 
-#include "../types.h"
+#include "types.h"
 
 typedef struct render_state {
   SDL_Window * window;
