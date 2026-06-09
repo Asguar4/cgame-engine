@@ -7,7 +7,8 @@ set physics=src\engine\physics\physics.c
 set array_list=src\engine\array_list\array_list.c
 set entity=src\engine\entity\entity.c
 set animation=src\engine\animation\animation.c
-set files=src\glad.c src\main.c src\engine\global\global.c %render% %io% %config% %input% %time% %physics% %array_list% %entity% %animation%
-set libs=C:\Work\cgame-engine\lib\SDL2main.lib C:\Work\cgame-engine\lib\SDL2.lib C:\Work\cgame-engine\lib\freetype.lib
+set audio=src\engine\audio\audio.c
+set files=src\glad.c src\main.c src\engine\global\global.c %render% %io% %config% %input% %time% %physics% %array_list% %entity% %animation% %audio%
+set libs=C:\Work\cgame-engine\lib\SDL2main.lib C:\Work\cgame-engine\lib\SDL2.lib C:\Work\cgame-engine\lib\SDL2_mixer.lib C:\Work\cgame-engine\lib\freetype.lib
 
 CL /Zi /I C:\Work\cgame-engine\include %files% /link %libs% /OUT:mygame.exe

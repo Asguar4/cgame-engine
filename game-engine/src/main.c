@@ -14,6 +14,10 @@
 #include "engine/entity.h"
 #include "engine/render.h"
 #include "engine/animation.h"
+#include "engine/audio.h"
+
+static Mix_Music *MUSIC_STAGE_1;
+static Mix_Chunk *SOUND_JUMP;
 
 static const f32 SPEED_ENEMY_LARGE = 200;
 static const f32 SPEED_ENEMY_SMALL = 4000;
@@ -49,6 +53,7 @@ static void input_handle(Body * body_player) {
   if (global.input.up && player_is_grounded) {
     player_is_grounded = false;
     vely = 2000;
+    audio_sound_play(SOUND_JUMP);
   }
 
   body_player->velocity[0] = velx;
@@ -109,6 +114,11 @@ int main(int argc, char * argvp[]) {
   physics_init();
   entity_init();
   animation_init();
+  audio_init();
+
+  audio_sound_load(&SOUND_JUMP, "assets/jump.wav");
+  audio_music_load(&MUSIC_STAGE_1, "assets/stage_1_theme.mp3");
+  audio_music_play(MUSIC_STAGE_1);
 
   SDL_ShowCursor(false);
 
@@ -187,6 +197,7 @@ int main(int argc, char * argvp[]) {
     animation_update(global.time.delta);
 
     // Spawn enemies.
+    /*
     {
       spawn_timer -= global.time.delta;
       if (spawn_timer <= 0) {
@@ -215,6 +226,7 @@ int main(int argc, char * argvp[]) {
         }
       }
     }
+    */
 
     render_begin();
 
