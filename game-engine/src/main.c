@@ -197,14 +197,13 @@ int main(int argc, char * argvp[]) {
     animation_update(global.time.delta);
 
     // Spawn enemies.
-    /*
     {
       spawn_timer -= global.time.delta;
       if (spawn_timer <= 0) {
         spawn_timer = (f32)((rand() % 200) + 200) / 100.f;
         spawn_timer *= 0.2;
 
-        for (u32 i = 0; i < 50; ++i) {
+        for (u32 i = 0; i < 2; ++i) {
           bool is_flipped = rand() % 100 >= 50;
 
           f32 spawn_x = is_flipped ? 540 : 100;
@@ -226,7 +225,6 @@ int main(int argc, char * argvp[]) {
         }
       }
     }
-    */
 
     render_begin();
 
