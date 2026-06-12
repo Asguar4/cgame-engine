@@ -15,8 +15,8 @@ void audio_init(void) {
     ERROR_EXIT("SDL_Mixer error: OpenAudio: %s\n", Mix_GetError());
   }
 
-  Mix_Volume(-1, 6);
-  Mix_VolumeMusic(2);
+  Mix_Volume(-1, 20);
+  Mix_VolumeMusic(16);
 }
 
 void audio_sound_load(Mix_Chunk **chunk, const char *path) {
