@@ -31,7 +31,7 @@ usize entity_create(vec2 position, vec2 size, vec2 sprite_offset, vec2 velocity,
   *entity = (Entity) {
     .is_active = true,
     .animation_id = animation_id,
-    .body_id = physics_body_create(position, size, velocity, collision_layer, collision_mask, is_kinematic, on_hit, on_hit_static),
+    .body_id = physics_body_create(position, size, velocity, collision_layer, collision_mask, is_kinematic, on_hit, on_hit_static, id),
     .sprite_offset = { sprite_offset[0], sprite_offset[1] },
   };
 
